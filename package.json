@@ -1,0 +1,31 @@
+{
+  "name": "food-ordering-app",
+  "version": "1.0.0",
+  "description": "this is food ordering App",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "keywords": [
+    "react",
+    "aman"
+  ],
+  "author": "Aman tiwari",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.12.0",
+    "postcss": "^8.4.41",
+    "process": "^0.11.10",
+    "tailwindcss": "^3.4.8"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.0",
+    "reactdom": "^2.0.0"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ]
+}
