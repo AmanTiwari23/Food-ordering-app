@@ -1,9 +1,10 @@
 import RestorentCard from "./RestorentCard";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../Utils/useOnlineStatus";
 import useFetchData from "../Utils/useFetchData";
+import UserContext from "../Utils/UserContext";
 
 const Body = () => {
   const {
@@ -21,11 +22,13 @@ const Body = () => {
     return <h1>Oops its looks like your internet is not connected</h1>;
   }
 
+  const { loggedInUser,setUserInfo } = useContext(UserContext);
+
   return listOfRestorent.length === 0 ? (
     <Shimmer />
   ) : (
     <div className="  bg-gray-100  m-auto">
-      <div className="filter flex">
+      <div className="filter flex items-center">
         <div className="search m-4 p-4">
           <input
             className=" border border-solid border-black"
@@ -47,7 +50,7 @@ const Body = () => {
           </button>
         </div>
 
-        <div className="search m-4 p-4">
+        <div className="search m-4 p-4 flex items-center">
           <button
             className="px-4 py-2 bg-gray-300 m-4 rounded-lg"
             onClick={() => {
@@ -59,6 +62,15 @@ const Body = () => {
           >
             Top rated Restorent
           </button>
+        </div>
+        <div className=" m-4 p-4 flex items-center">
+          <label>UserName : </label>
+          <input
+            className="border border-black p-1"
+            value={loggedInUser}
+            onChange={(event)=> setUserInfo(event.target.value)
+            }
+          />
         </div>
       </div>
 

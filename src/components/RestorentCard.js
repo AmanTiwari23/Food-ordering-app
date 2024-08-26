@@ -4,6 +4,7 @@ const RestorentCard = (props) => {
   const { cloudinaryImageId, name, cuisines, avgRating, costForTwo } =
     resdata?.info;
   const { deliveryTime } = resdata.info.sla;
+  
 
   return (
     <div className="m-4 p-2 w-72 h-80 bg-gray-100 rounded-lg hover:bg-gray-300 ">
