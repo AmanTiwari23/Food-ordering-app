@@ -22,7 +22,7 @@ const useFetchData = () =>{
 
         }
 
-        return {listOfRestorent,filteredRestro};
+        return {listOfRestorent,filteredRestro,setListOfRestorent,setFilteredRestro};
 }
 
 export default useFetchData;

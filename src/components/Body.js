@@ -1,5 +1,5 @@
 import RestorentCard from "./RestorentCard";
-import { useContext, useState } from "react";
+import { useContext, useState,useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../Utils/useOnlineStatus";
@@ -13,6 +13,7 @@ const Body = () => {
     setFilteredRestro,
     setListOfRestorent,
   } = useFetchData();
+ 
 
   const [searchText, setSearchText] = useState("");
 
@@ -31,6 +32,7 @@ const Body = () => {
       <div className="filter flex items-center">
         <div className="search m-4 p-4">
           <input
+            data-testid = "searchInput"
             className=" border border-solid border-black"
             value={searchText}
             onChange={(e) => {
@@ -55,9 +57,8 @@ const Body = () => {
             className="px-4 py-2 bg-gray-300 m-4 rounded-lg"
             onClick={() => {
               const filterresList = listOfRestorent.filter(
-                (res) => res.info.avgRating > 4.5
-              );
-              setListOfRestorent(filterresList);
+                (res) =>  res.info.avgRating > 4.5);
+              setFilteredRestro(filterresList);
             }}
           >
             Top rated Restorent

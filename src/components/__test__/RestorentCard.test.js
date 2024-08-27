@@ -11,4 +11,4 @@ it("should render restorent card component", ()=>{
     const name = screen.getByText("Burger King");
 
     expect(name).toBeInTheDocument();
-})
+}) 
