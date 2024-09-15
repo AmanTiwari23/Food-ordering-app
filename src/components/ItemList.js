@@ -11,14 +11,14 @@ const ItemList = ({ items }) => {
   }
 
   return (
-    <div>
+    <div className="space-y-4">
       {items.map((item) => (
         <div
         data-testid="foodItems"
           key={item.card.info.id}
           className="  p-2 m2 border-gray-200 border-b-2 text-left flex justify-between"
         >
-          <div className=" w-9/12">
+          <div className=" w-8/12">
             <div className="py-2">
               <span>{item.card.info.name}</span>
               <span>
@@ -31,14 +31,14 @@ const ItemList = ({ items }) => {
             </div>
             <p className="text-xs"> {item.card.info.description}</p>
           </div>
-          <div className="w-3/12 rounded-lg relative ">
+          <div className="w-4/12 flex-col items-center relative ">
             <img
               src={CDN_URL + item.card.info.imageId}
-              className=" w-full p-4 h-32 object-cover rounded-lg"
+              className=" w-full p-4 h-32 object-cover rounded-lg mb-2"
             />
             <div className="absolute top-1">
               <button
-                className="px-2 py-1  mx-4 shadow-lg bg-black text-white rounded-lg"
+                className=" flex items-center px-3 py-2 shadow-lg bg-black text-white rounded-lg hover:bg-gray-600 transition-colors"
                 onClick={ ()=> handleAddItem(item)}
               >
                 Add +

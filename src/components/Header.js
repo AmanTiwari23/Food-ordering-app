@@ -8,37 +8,66 @@ import { useSelector } from "react-redux";
 const Header = () => {
   const [btnname, setBtnName] = useState("Login");
   const onlineStatus = useOnlineStatus();
-  const {loggedInUser} = useContext(UserContext);
+  const { loggedInUser } = useContext(UserContext);
 
-  const cartItems = useSelector((store)=> store.cart.items);
-   
+  const cartItems = useSelector((store) => store.cart.items);
+
   return (
-    <div className="flex justify-between bg-green-100 shadow-lg mb-2">
-      <div className="logo-container">
-        <img className="logo w-40" src={LOGO_URL} />
+    <div className="flex items-center justify-between bg-gradient-to-r from-green-100 via-orange-100 to-red-50 shadow-lg p-2 mx-auto max-w-screen sticky top-0 z-10">
+      <div className="logo-container flex items-center">
+        <img className=" w-32" src={LOGO_URL} alt="logo" />
       </div>
 
-      <div className="flex items-center">
-        <ul className="flex p-4 m-4">
-          <li className="px-4">Online Status : {onlineStatus ? "✅" : "🔴"}</li>
-          <li className="px-4">
+      <div className="flex flex-grow justify-end items-center">
+        <ul className="flex space-x-8">
+          <li className="text-gray-700 font-semibold">
+            Online Status : {onlineStatus ? "✅" : "🔴"}
+          </li>
+          <li>
             {" "}
-            <Link to="/">Home</Link>
+            <Link
+              to="/"
+              className="text-lg font-semibold text-gray-700 hover:text-orange-500 hover:underline transition-all duration-200"
+            >
+              Home
+            </Link>
           </li>
-          <li className="px-4">
-            <Link to="/about">About us</Link>
+          <li>
+            <Link
+              to="/about"
+              className="text-lg font-semibold text-gray-700 hover:text-orange-500 hover:underline transition-all duration-200"
+            >
+              About us
+            </Link>
           </li>
-          <li className="px-4">
-            <Link to="/contact">contact us</Link>
+          <li>
+            <Link
+              to="/contact"
+              className="text-lg font-semibold text-gray-700 hover:text-orange-500 hover:underline transition-all duration-200"
+            >
+              contact us
+            </Link>
           </li>
-          <li className="px-4">
+          <li>
             {" "}
-            <Link to="/grocery"> Grocery </Link>
+            <Link
+              to="/grocery"
+              className="text-lg font-semibold text-gray-700 hover:text-orange-500 hover:underline transition-all duration-200"
+            >
+              {" "}
+              Grocery{" "}
+            </Link>
           </li>
-          <li className="px-4 font-bold">
-            <Link to="/cart">Cart- ({cartItems.length} Items)</Link></li>
+          <li>
+            <Link
+              to="/cart"
+              className="text-lg font-semibold text-gray-700 hover:text-orange-500 hover:underline transition-all duration-200"
+            >
+              Cart-({cartItems.length}Items)
+            </Link>
+          </li>
           <button
-            className="px-4 h-0"
+            className="text-lg font-semibold text-gray-700 hover:text-orange-500 hover:underline transition-all duration-200"
             onClick={() => {
               btnname === "Login" ? setBtnName("Logout") : setBtnName("Login");
             }}
@@ -46,7 +75,9 @@ const Header = () => {
             {btnname}
           </button>
 
-          <li className="px-4">{loggedInUser}</li>
+          <li className="text-lg font-semibold text-gray-700 hover:text-orange-500 hover:underline transition-all duration-200">
+            {loggedInUser}
+          </li>
         </ul>
       </div>
     </div>
