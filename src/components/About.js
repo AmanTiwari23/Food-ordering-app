@@ -1,6 +1,6 @@
 import { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faInfoCircle } from '@fortawesome/free-brands-svg-icons';
+// import { faInfoCircle } from '@fortawesome/react-fontawesome'
 import {
   faInstagram,
   faLinkedin,
@@ -20,10 +20,10 @@ class About extends Component {
         <div className="max-w-3xl mx-auto">
           <div className="mb-6">
             <h1 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900 flex items-center justify-center relative">
-              <FontAwesomeIcon
+              {/* <FontAwesomeIcon
                 icon={faInfoCircle}
                 className="mr-2 text-purple-500 text-4xl sm:text-5xl"
-              />
+              /> */}
               <span className="relative z-10 bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
                 About Us
               </span>
